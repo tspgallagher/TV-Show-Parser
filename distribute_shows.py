@@ -52,11 +52,16 @@ def deposit_files(path: Path):
                         # shutil.rmtree(dld_episode_dir)
 
 
-complete_dir = Path(
-    "/Users/tspgallagher/Projects/Python/TV-Show-Parser/complete")
-torrents_dir = Path(
-    "/Users/tspgallagher/Projects/Python/TV-Show-Parser/Torrents")
-tv_dowloads_root = "/Users/tspgallagher/Projects/Python/TV-Show-Parser/TVDownloads"
+# complete_dir = Path(
+#     "/Users/tspgallagher/Projects/Python/TV-Show-Parser/complete")
+# torrents_dir = Path(
+#     "/Users/tspgallagher/Projects/Python/TV-Show-Parser/Torrents")
+# tv_dowloads_root = "/Users/tspgallagher/Projects/Python/TV-Show-Parser/TVDownloads"
+
+complete_dir = Path("/Volumes/Plex Content/complete")
+torrents_dir = Path("/Volumes/Plex Content/Torrents")
+tv_dowloads_root = "/Volumes/Plex Content/TV Downloads"
+
 sep = "/"
 
 tvd_path = Path(tv_dowloads_root)
