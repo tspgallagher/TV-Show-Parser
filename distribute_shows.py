@@ -62,7 +62,6 @@ torrents_dir = Path("/Volumes/Plex Content/Torrents")
 tv_dowloads_root = "/Volumes/Plex Content/TV Downloads"
 
 sep = "/"
-
 tvd_path = Path(tv_dowloads_root)
 
 if not(tvd_path.is_dir() and tvd_path.exists):
