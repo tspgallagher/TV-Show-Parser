@@ -10,11 +10,11 @@ def find_show_name(episode_name: str) -> str:
     try:
         idx2 = re.search("(.[0-9][0-9][0-9][0-9])", show_name).start()
     except:
-        pass
+        show_name = show_name[:idx].replace(".", " ")
     else:
         show_name = show_name[:idx2].replace(".", " ")
-        if (show_name == "S W A T"):
-            show_name = "S.W.A.T."
+    if (show_name == "S W A T"):
+        show_name = "S.W.A.T."
 
     return str(show_name)
 
@@ -53,10 +53,10 @@ def deposit_files(path: Path):
 
 
 # complete_dir = Path(
-#     "/Users/tspgallagher/Projects/Python/TV-Show-Parser/complete")
+#    "/Users/tspgallagher/Projects/Python/TV-Show-Parser/complete")
 # torrents_dir = Path(
-#     "/Users/tspgallagher/Projects/Python/TV-Show-Parser/Torrents")
-# tv_dowloads_root = "/Users/tspgallagher/Projects/Python/TV-Show-Parser/TVDownloads"
+#    "/Users/tspgallagher/Projects/Python/TV-Show-Parser/Torrents")
+#tv_dowloads_root = "/Users/tspgallagher/Projects/Python/TV-Show-Parser/TVDownloads"
 
 complete_dir = Path("/Volumes/Plex Content/complete")
 torrents_dir = Path("/Volumes/Plex Content/Torrents")
@@ -69,7 +69,7 @@ tvd_path = Path(tv_dowloads_root)
 if not(tvd_path.is_dir() and tvd_path.exists):
     tvd_path.mkdir()
 
-for path in [complete_dir, torrents_dir]:
-    if not(path.is_dir() and path.exists):
+for dld_path in [complete_dir, torrents_dir]:
+    if not(dld_path.is_dir() and dld_path.exists):
         exit
-    deposit_files(path)
+    deposit_files(dld_path)
