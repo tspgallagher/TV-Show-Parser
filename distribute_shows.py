@@ -48,8 +48,7 @@ def deposit_files(path: Path):
                         print("Could not move file \n\"" +
                               src_name + "\"\nto\n\"" + dst_name + "\"")
                     else:
-                        pass
-                        # shutil.rmtree(dld_episode_dir)
+                        shutil.rmtree(dld_episode_dir)
 
 
 # complete_dir = Path(
