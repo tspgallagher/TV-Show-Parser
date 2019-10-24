@@ -88,8 +88,8 @@ def deposit_files(path: Path):
                     dst_name = str(dst_directory) + sep + \
                         episode_name + dep.suffix
                     try:
-                        #    shutil.copy(src_name, dst_name)
-                        copy_file(src_name, dst_name)
+                        # Needs except clause for link failure (can't link across filesystems)
+                        os.link(src_name, dst_name)
 
                     except (shutil.Error, OSError, IOError):
                         print("Could not move file \n\"" +
